@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:complexType name="pref_var_t">
+    <xs:sequence>
+      <xs:element name="VARIABLE-NAME" type="xs:string"/>
+      <xs:element name="DOMAIN-VALUE" type="xs:short" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pref_st_t">
+    <xs:sequence>
+      <xs:element name="STATEMENT-ID" type="xs:string"/>
+      <xs:element name="PREFERENCE-VARIABLE" type="xs:string"/>
+      <xs:element name="CONDITION" type="xs:string"  minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="PREFERENCE" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cpn_t">
+    <xs:sequence>
+      <xs:element name="PREFERENCE-VARIABLE" type="pref_var_t" maxOccurs="unbounded"/>
+      <xs:element name="PREFERENCE-STATEMENT" type="pref_st_t" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="PREFERENCE-SPECIFICATION" type="cpn_t"/>
+
+</xs:schema>
