@@ -1,0 +1,27 @@
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore Makefile
+!Makefile
+
+### Above combination will ignore all files, except Makefile, without extension ###
+
+# Ignore files with extension `.o`
+*.o
+
+# Ignore `bin` dir
+bin/
+# or
+*/bin/*
+
+# Ignore cpnet XML's
+cpnet*.xml
+
+# Ignore vim swap files
+*.swp.
+
+# Ignore generated cpnet datasets
+cpnet*/
